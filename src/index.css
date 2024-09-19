@@ -1,0 +1,79 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  /* Customize these variable */
+  /* https://github.com/adamwathan/tailwind-css-variable-text-opacity-demo */
+  --tw-clr-primary-400: 0, 224, 243;
+  --tw-clr-primary-500: 0, 196, 253;
+
+  --clr-primary-400: rgb(var(--tw-clr-primary-400)); /* #00e0f3 */
+  --clr-primary-500: rgb(var(--tw-clr-primary-500)); /* #00c4fd */
+  /* font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif; */
+  /* line-height: 1.5; */
+  /* font-weight: 400; */
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* @layer base {
+  body {
+    @apply min-w-80 min-h-screen w-11/12;
+  }
+} */
+
+@layer base {
+  /* Variable fonts usage:
+:root { font-family: "Inter", sans-serif; }
+@supports (font-variation-settings: normal) {
+  :root { font-family: "InterVariable", sans-serif; font-optical-sizing: auto; }
+} */
+  @font-face {
+    font-family: InterVariable;
+    font-style: normal;
+    font-weight: 100 900;
+    font-display: swap;
+    src: url("./fonts/InterVariable.woff2") format("woff2");
+  }
+  @font-face {
+    font-family: InterVariable;
+    font-style: italic;
+    font-weight: 100 900;
+    font-display: swap;
+    src: url("./fonts/InterVariable-Italic.woff2") format("woff2");
+  }
+  /* font-primary is set in tailwind.config.js */
+  h1 {
+    @apply font-primary text-2xl font-bold md:text-4xl;
+  }
+
+  h2 {
+    @apply font-primary text-xl font-bold md:text-3xl;
+  }
+
+  h3 {
+    @apply font-primary text-lg font-bold md:text-2xl;
+  }
+
+  h4 {
+    @apply font-primary text-base font-bold md:text-lg;
+  }
+
+  body {
+    @apply font-primary text-sm md:text-base;
+  }
+
+  .layout {
+    /* 750px */
+    /* max-width: 43.75rem; */
+
+    /* 1100px */
+    /* max-width: 68.75rem; */
+    @apply mx-auto w-11/12 max-w-fit;
+  }
+  /* The 90% width will provide a great amount of padding for mobile view and will get constrained at 1100px when we get to a bigger viewport. You can use any value for the max-width, but I found 1100px suits a lot of cases. To use this class, put it in the first divn unter a global <section> tag */
+}
